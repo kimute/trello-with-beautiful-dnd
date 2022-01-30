@@ -16,4 +16,4 @@ Simple Kanban(ToDo) App like Trello
 
 ### test app below
 
-https://kimute.github.io/trello-with-beautiful-dnd
+https://kimute.github.io/trello-with-beautiful-dnd/
