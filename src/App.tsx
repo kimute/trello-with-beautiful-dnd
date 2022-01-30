@@ -1,9 +1,8 @@
 import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import {DragDropContext, Draggable, Droppable, DropResult} from 'react-beautiful-dnd';
+import { useRecoilState } from 'recoil';
+import {DragDropContext, DropResult} from 'react-beautiful-dnd';
 import styled from 'styled-components';
-import { toDostate } from './atoms';
-import DraggableCard from './DragabbleCard';
+import { toDostate} from './atoms';
 import Board from './Board';
 
 const Wrapper = styled.div`
@@ -20,13 +19,13 @@ const Boards = styled.div`
   display: grid;
   width: 100%;
   gap:10px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 `;
 
 
 
 function App() {
-  const [toDos, setToDos] =useRecoilState(toDostate)
+  const [toDos, setToDos] =useRecoilState(toDostate);
   // when the drag finished
   const onDragEnd =(info: DropResult) =>{
    console.log(info);
@@ -62,28 +61,16 @@ function App() {
          ...allBoards,
          [source.droppableId]: sourceBoard,
          [destination.droppableId]: destinationBoard
-
-       }
-
+       };
      });
-   }
-  
-
-    // setToDos((oldTodos) => {
-    //   const copyTodos = [...oldTodos];
-    //   //1)delete items
-    //   copyTodos.splice(source.index, 1)
-    //   //["a","b","c"]
-    //   copyTodos.splice(destination?.index, 0, draggableId)
-    //   return copyTodos
-    // });
+   };
   }
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Wrapper>
+      <Wrapper >
         <Boards>
            {Object.keys(toDos).map(boardId => <Board boardId={boardId} key={boardId} toDos={toDos
-          [boardId]}></Board>)}
+          [boardId]}/>)}
          </Boards>
        </Wrapper>
     </DragDropContext>
