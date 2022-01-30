@@ -7,12 +7,12 @@ import Board from './Board';
 
 const Wrapper = styled.div`
   display: flex;
-  max-width:780px;
-  width: 100%;
-  margin: 0 auto;
+  min-width:580px;
+  margin: 0 50px;
+  margin-right: 50px;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const Boards = styled.div`
