@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/trello-with-beautiful-dnd/static/js/main.ae9d3a2d.js",
+    "index.html": "/trello-with-beautiful-dnd/index.html",
+    "main.ae9d3a2d.js.map": "/trello-with-beautiful-dnd/static/js/main.ae9d3a2d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ae9d3a2d.js"
+  ]
+}
