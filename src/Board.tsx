@@ -72,10 +72,11 @@ function Board({toDos, boardId}: IBoardPorps){
             text: toDo
         };
         setToDos((allBoards) => {
-            return {
+            const returnArray ={
                 ...allBoards,
                 [boardId]:[newToDo, ...allBoards[boardId]]
-            };
+            }
+            return returnArray;
         });
         setValue("toDo", "")
     };

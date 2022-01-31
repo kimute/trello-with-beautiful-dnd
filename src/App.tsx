@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import {DragDropContext, DropResult} from 'react-beautiful-dnd';
 import styled from 'styled-components';
@@ -65,6 +65,15 @@ function App() {
      });
    };
   }
+  useEffect(() => {
+    const getItems = localStorage.getItem("lists");
+    if (getItems === "{}" || getItems === null)
+      return;
+    setToDos(JSON.parse(getItems));
+  }, []);
+  useEffect(() => {
+    localStorage.setItem("lists", JSON.stringify(toDos));
+  }, [toDos]);
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Wrapper >
